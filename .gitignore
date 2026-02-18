@@ -1,0 +1,12 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# NotebookLM Scripts
+scripts/
+__pycache__/
+*.pyc
+
+# Personal
+.env
+keys.json

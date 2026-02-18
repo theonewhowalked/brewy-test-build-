@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewy — Content &amp; Marketing Deck</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #4A3B32;
+            --secondary: #2E4A3D;
+            --accent: #D4AF37;
+            --neutral: #8D8D8D;
+            --bg: #F5F1E6;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --border: #e5e5e5;
+            --linkedin: #0077B5;
+            --instagram: #E4405F;
+            --facebook: #1877F2;
+            --youtube: #FF0000;
+            --podcast: #8B5CF6;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- Cover --- */
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .cover .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        .cover .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .cover .stat { text-align: center; }
+        .cover .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .cover .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* --- Navigation --- */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav a {
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-light);
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav a:hover, .nav a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* --- Sections --- */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .section .section-desc {
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- Content Calendar --- */
+        .week-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            margin-top: 2rem;
+        }
+        .week-header h3 { font-size: 1.3rem; font-weight: 700; }
+        .week-header .dates {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        .day-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 1fr;
+            border: 1px solid var(--border);
+            border-top: none;
+        }
+        .day-row:last-child { border-radius: 0 0 12px 12px; }
+
+        .day-label {
+            background: white;
+            padding: 1.5rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-right: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .platform-post {
+            padding: 1.5rem;
+            background: white;
+            border-right: 1px solid var(--border);
+        }
+        .platform-post:last-child { border-right: none; }
+
+        .platform-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+        .badge-linkedin { background: var(--linkedin); }
+        .badge-instagram { background: var(--instagram); }
+
+        .post-hook {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .post-copy {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- Divider --- */
+        hr.divider {
+            border: none;
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover -->
+    <div class="cover">
+        <div class="subtitle">Content &amp; Marketing Strategy</div>
+        <h1>Brewy</h1>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Months Planned</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Day Launch</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500</div>
+                <div class="stat-label">Beta Slots</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#calendar">Content Calendar</a>
+        <a href="#launch">Launch Sequence</a>
+        <a href="#scripts">Video Scripts</a>
+    </nav>
+
+    <!-- CONTENT CALENDAR -->
+    <div class="section" id="calendar">
+        <div class="section-label">01 / Social Media</div>
+        <h2>Content Calendar: Month 1 (Trust)</h2>
+        <p class="section-desc">Establishing the scientific foundation. "Nature, Quantified."</p>
+
+        <div class="week-header">
+            <h3>Week 1: The Problem (Caffeine Anxiety)</h3>
+            <div class="dates">Foundation</div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Monday</div>
+            <div class="platform-post">
+                <span class="platform-badge badge-linkedin">LinkedIn</span>
+                <div class="post-hook">"The 2:00 PM crash isn't natural."</div>
+                <div class="post-copy">It's a bug in your coffee. Adenosine blockade vs removal.</div>
+            </div>
+            <div class="platform-post">
+                <span class="platform-badge badge-instagram">Instagram</span>
+                <div class="post-hook">"Stop borrowing energy from tomorrow."</div>
+                <div class="post-copy">Visual: Time-lapse of a wilting plant perking up.</div>
+            </div>
+        </div>
+        <div class="day-row">
+            <div class="day-label">Tuesday</div>
+            <div class="platform-post">
+                <span class="platform-badge badge-linkedin">LinkedIn</span>
+                <div class="post-hook">"Why I fired my coffee."</div>
+                <div class="post-copy">The Founder Story. From burnout to flow.</div>
+            </div>
+            <div class="platform-post">
+                <span class="platform-badge badge-instagram">Instagram</span>
+                <div class="post-hook">"The Pour Over." (ASMR)</div>
+                <div class="post-copy">Slow motion bloom. "Science looks beautiful."</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- LAUNCH SEQUENCE -->
+    <div class="section" id="launch">
+        <div class="section-label">02 / Launch Strategy</div>
+        <h2>14-Day Launch Sequence</h2>
+        <p class="section-desc">The "Beta Batch" Drop.</p>
+
+        <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+            <h3>Phase 1: Tease (Days 1-5)</h3>
+            <p><strong>Goal:</strong> Mystery. "Your morning has a bug."</p>
+            <br>
+            <h3>Phase 2: Reveal (Days 6-7)</h3>
+            <p><strong>Goal:</strong> Sales. "The Beta Batch is live."</p>
+            <br>
+            <h3>Phase 3: Proof (Days 8-14)</h3>
+            <p><strong>Goal:</strong> Validation. "See the lab reports."</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- VIDEO SCRIPTS -->
+    <div class="section" id="scripts">
+        <div class="section-label">03 / Video Production</div>
+        <h2>Key Video Scripts</h2>
+        
+        <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem;">Script 1: The Problem</h3>
+            <p><strong>Visual:</strong> Wilting plant time-lapse.</p>
+            <p><strong>Audio:</strong> "Stop borrowing energy from tomorrow. Coffee blocks adenosine. Brewy removes it."</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+            <h3 style="margin-bottom: 1rem;">Script 2: The Flavor</h3>
+            <p><strong>Visual:</strong> Person spitting out a mushroom.</p>
+            <p><strong>Audio:</strong> "Does it taste like mushrooms? God no. It tastes like caramel and walnut. We are roasters first."</p>
+        </div>
+    </div>
+
+</body>
+</html>

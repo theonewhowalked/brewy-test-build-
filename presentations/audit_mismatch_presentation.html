@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand Alignment: Brewy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0f1115;
+            color: #fff;
+        }
+
+        .slide {
+            height: 100vh;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #333;
+            page-break-after: always;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px 0;
+            background: linear-gradient(90deg, #D4AF37, #F5F1E6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.2em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #1a1d24;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .card.expected {
+            border-left: 4px solid #4caf50;
+        }
+
+        .card.reality {
+            border-left: 4px solid #0077ff;
+            /* Blue for Opportunity */
+        }
+
+        .label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .value {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .verdict {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .slide {
+                height: 100vh;
+                border-bottom: none;
+            }
+
+            h1 {
+                -webkit-text-fill-color: black;
+            }
+
+            .card {
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Title Slide -->
+    <div class="slide" style="text-align: center;">
+        <h1>The Blank Slate Advantage</h1>
+        <h2>Brand Alignment Analysis for Brewy</h2>
+        <p style="margin-top: 40px; color: #666;">Defining the gap between where we start and where we are going.</p>
+    </div>
+
+    <!-- Visual Identity Mismatch -->
+    <div class="slide">
+        <h2>Visual Identity</h2>
+        <h1>The Opportunity Gap</h1>
+
+        <div class="grid">
+            <div class="card expected">
+                <span class="label">The Goal (Strategy)</span>
+                <div class="value">Scientific Naturalist</div>
+                <p style="color: #aaa; margin-top: 10px;">Primary Color: #4A3B32 (Earth)<br>Font: Playfair Display</p>
+            </div>
+
+            <div class="card reality">
+                <span class="label">The Start (Reality)</span>
+                <div class="value">Blank Canvas</div>
+                <p style="color: #aaa; margin-top: 10px;">Current Assets: Logo Only<br>Digital Footprint: None</p>
+            </div>
+        </div>
+
+        <div class="verdict">
+            <strong>Verdict:</strong> Perfect Alignment Potential. No legacy debt to fix.
+        </div>
+    </div>
+
+    <!-- Messaging Mismatch -->
+    <div class="slide">
+        <h2>Voice & Tone</h2>
+        <h1>Establishing Authority</h1>
+
+        <div class="grid">
+            <div class="card expected">
+                <span class="label">Target Tone</span>
+                <div class="value">Educated, Grounded, Friendly</div>
+            </div>
+
+            <div class="card reality">
+                <span class="label">Current Perception</span>
+                <div class="value">Unknown / Silent</div>
+            </div>
+        </div>
+
+        <div class="verdict">
+            <strong>Verdict:</strong> Radical Transparency is our differentiator in a noisy market.
+        </div>
+    </div>
+
+    <!-- Critical Fixes -->
+    <div class="slide">
+        <h2>Action Plan</h2>
+        <h1>Execution Priorities</h1>
+
+        <div style="margin-top: 40px;">
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid #D4AF37;">
+                <span class="label">Priority 1</span>
+                <div class="value">Launch the "Beta Batch" to build trust.</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid #D4AF37;">
+                <span class="label">Priority 2</span>
+                <div class="value">Publish Lab Reports (COA) for transparency.</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid #D4AF37;">
+                <span class="label">Priority 3</span>
+                <div class="value">Establish the "Ritual" content pillar on Instagram.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

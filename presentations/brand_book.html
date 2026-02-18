@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewy — The Code of Conduct</title>
+
+    <!-- Meta Tags for Social & SEO -->
+    <meta property="og:title" content="Brewy Brand Book">
+    <meta property="og:description" content="The definitive guide to our visual language and brand code.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex, nofollow"> <!-- Confidentiality -->
+    <style>
+        /* --- Typography & Reset --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+
+            /* Palette */
+            --primary: #4A3B32; /* Mocha Earth */
+            --secondary: #2E4A3D; /* Forest Green */
+            --accent: #D4AF37; /* Lion's Mane Gold */
+            --surface: #F5F1E6; /* Cream Paper */
+            --critical: #E53935; /* Red */
+            --neutral: #8D8D8D; /* Stone Grey */
+
+            /* Theme Tokens */
+            --bg: #F5F1E6;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --border: #e5e5e5;
+            --card-bg: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+
+            /* Typography Scale */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --text-h1: clamp(3rem, 5vw + 1rem, 6rem);
+            --text-h2: clamp(2rem, 3vw + 1rem, 3.5rem);
+            --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: var(--text-base);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.1;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            max-width: 65ch;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        a:hover { opacity: 0.8; }
+
+        /* --- Utility Classes --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .grid-bento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: var(--border);
+            margin: 6rem 0;
+            width: 100%;
+        }
+
+        /* --- Components: Hero / Cover --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: var(--text-h1);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .tagline {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: var(--text-h3);
+            opacity: 0.9;
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+
+        .hero__meta {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* --- Section: The North Star --- */
+        .manifesto-block {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .manifesto-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            line-height: 1.4;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* --- Section: Dreams of the Brand --- */
+        .dreams-section {
+            background: #111;
+            color: white;
+            padding: 6rem 0;
+            margin: 4rem 0;
+        }
+
+        .dreams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .dream-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dream-card h3 {
+            font-family: var(--font-display);
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* --- Section: Visual Identity --- */
+        .color-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .swatch {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .swatch-color {
+            height: 160px;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .swatch:hover .swatch-color {
+            transform: scale(1.05);
+        }
+
+        .swatch-details {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .swatch-hex {
+            font-family: monospace;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- accessibility-viz --- */
+        .a11y-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contrast-checker {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--border);
+        }
+
+        /* --- Section: Digital Artisans (AI) --- */
+        .ai-terminal {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Fira Code', monospace;
+            padding: 3rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        /* --- Print Styles --- */
+        @media print {
+            nav, #backToTop, .video-embed { display: none !important; }
+            body { color: black; background: white; }
+            a[href]:after { content: " (" attr(href) ")"; }
+            h1, h2 { page-break-after: avoid; }
+            .dreams-section, .ai-terminal { background: white; color: black; border: 1px solid #000; }
+            body { font-size: 12pt; }
+            .page-break { break-after: page; }
+        }
+
+        /* --- Back to Top Button --- */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #backToTop.visible { opacity: 1; pointer-events: auto; }
+        #backToTop:hover { transform: translateY(-4px); }
+
+        .ai-terminal::before {
+            content: "AI_PROTOCOL_V1.0";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.7rem;
+            opacity: 0.5;
+        }
+
+        .prompt-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .prompt-label {
+            color: #569cd6;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .prompt-text { color: #ce9178; }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 4rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        /* --- Responsive Queries --- */
+        @media (max-width: 768px) {
+            .values-grid, .a11y-grid { grid-template-columns: 1fr; }
+            .hero { padding: 6rem 1rem; min-height: 80vh; }
+            .section { padding: 4rem 1.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cover -->
+    <header class="hero">
+        <div class="hero__meta">Confidential // Internal Use</div>
+        <h1>Brewy</h1>
+        <div class="subtitle">The Brand Book</div>
+        <div class="tagline">"Natural Energy. Zero Jitters."</div>
+    </header>
+
+    <!-- 0. The North Star -->
+    <section class="container manifesto-block">
+        <span class="label">00 / The North Star</span>
+        <h2 style="font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 2rem;">Why We Are Here</h2>
+
+        <p class="manifesto-text">We believe the modern world is over-caffeinated and under-focused. Traditional coffee borrows energy from tomorrow to pay for today, leaving us anxious and depleted. We exist to fix the bug in the code of the American morning ritual by merging the joy of premium coffee with the clinically proven power of functional mushrooms.</p>
+
+        <div class="values-grid">
+            <div class="card">
+                <span class="label">Vision</span>
+                <p>To make "Functional Energy" the default standard for the creative class.</p>
+            </div>
+            <div class="card">
+                <span class="label">Mission</span>
+                <p>To produce the world's cleanest, most effective focus-enhancing coffee without sacrificing taste.</p>
+            </div>
+            <div class="card">
+                <span class="label">Core Values</span>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Radical Transparency:</strong> We show the lab reports. No "Proprietary Blends".</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Taste is King:</strong> If it tastes like dirt, it's a failure.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Design for Calm:</strong> We lower cortisol, we don't spike it.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dreams of the Brand (New Section) -->
+    <section class="dreams-section">
+        <div class="container">
+            <span class="label" style="opacity: 0.7;">0.5 / The Dream State</span>
+            <h2 style="margin-bottom: 3rem; font-family: var(--font-display);">Where We Are Going</h2>
+
+            <div class="dreams-grid">
+                <div class="dream-card">
+                    <h3>The Moonshot</h3>
+                    <p>To be the "Patagonia of Nootropics"—respected for quality, transparency, and ethics.</p>
+                </div>
+                <div class="dream-card">
+                    <h3>The Legacy</h3>
+                    <p>Changing the way a generation works—from "Grind and Hustle" to "Flow and Focus".</p>
+                </div>
+                <div class="dream-card">
+                    <h3>The Feeling</h3>
+                    <p>The quiet confidence of a master craftsman opening their tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. The Vibe (Psychology) -->
+    <section class="container" style="margin-bottom: 4rem;">
+        <span class="label">01 / The Vibe</span>
+        <h2>Psychology &amp; Archetypes</h2>
+
+        <div class="grid-bento" style="margin-top: 2rem;">
+            <div class="card" style="grid-column: span 2;">
+                <h3>The Sage (Primary)</h3>
+                <p>We are driven by truth, science, and wisdom. We educate our customers on what they are putting into their bodies.</p>
+            </div>
+            <div class="card">
+                <h3>The Creator (Secondary)</h3>
+                <p>We believe in building, crafting, and designing a better life (and a better cup). Aesthetic matters.</p>
+            </div>
+            <div class="card" style="grid-column: 1 / -1; background: var(--secondary); color: white;">
+                <span class="label" style="color: rgba(255,255,255,0.7);">Emotional Narrative</span>
+                <p style="font-size: 1.25rem; font-style: italic;">"From Anxious Jitters to Calm Mastery."</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 2. The Look (Visual Identity) -->
+    <section class="container">
+        <span class="label">02 / The Look</span>
+        <h2>Visual Identity</h2>
+
+        <!-- Color -->
+        <h3 style="margin: 3rem 0 1.5rem;">The Palette</h3>
+        <div class="color-matrix">
+            <div class="swatch">
+                <div class="swatch-color" style="background: #4A3B32;"></div>
+                <div class="swatch-details">
+                    <strong>Primary</strong>
+                    <div class="swatch-hex">#4A3B32</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #2E4A3D;"></div>
+                <div class="swatch-details">
+                    <strong>Secondary</strong>
+                    <div class="swatch-hex">#2E4A3D</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #D4AF37;"></div>
+                <div class="swatch-details">
+                    <strong>Accent</strong>
+                    <div class="swatch-hex">#D4AF37</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: #F5F1E6;"></div>
+                <div class="swatch-details">
+                    <strong>Surface</strong>
+                    <div class="swatch-hex">#F5F1E6</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography & Logo -->
+        <div class="grid-bento">
+            <div class="card" style="grid-column: span 2;">
+                <span class="label">Typography</span>
+                <div style="font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1; margin-bottom: 1rem;">
+                    Aa Bb Cc
+                </div>
+                <p><strong>Primary:</strong> Playfair Display (Headlines)</p>
+                <p><strong>Secondary:</strong> Inter (Body Copy)</p>
+            </div>
+
+            <div class="card">
+                <span class="label">Logo Construction</span>
+                <p><strong>Clearance:</strong> Width of the "B" on all sides.</p>
+                <p><strong>Min Digital:</strong> 32px</p>
+                <p><strong>Min Print:</strong> 15mm</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 3. The Sound (Voice & Tone) -->
+    <section class="container">
+        <span class="label">03 / The Sound</span>
+        <h2>Voice &amp; Tone</h2>
+
+        <div class="grid-bento">
+            <div class="card">
+                <span class="label">Tone Pillars</span>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;">1. <strong>Educated</strong>: We know our chemistry (Adenosine, Beta-Glucans).</li>
+                    <li style="margin-bottom: 0.5rem;">2. <strong>Grounded</strong>: We avoid "Woo-Woo" magic. It's biology.</li>
+                    <li style="margin-bottom: 0.5rem;">3. <strong>Friendly</strong>: We are the helpful expert, not the snob.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="label">Vocabulary</span>
+                <div style="display: flex; gap: 2rem;">
+                    <div style="color: #22c55e;">
+                        <strong>Say This:</strong><br>
+                        Flow State, Protocol, Extraction, Fruiting Bodies, Calm.
+                    </div>
+                    <div style="color: #ef4444;">
+                        <strong>Never This:</strong><br>
+                        Trip, Magic, Vibes, Shroomy, High.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 5. The Digital Artisans (AI) -->
+    <section class="container">
+        <span class="label">05 / The Digital Artisans</span>
+        <h2>AI Protocols &amp; Governance</h2>
+
+        <div class="ai-terminal">
+            <div style="margin-bottom: 2rem;">
+                <span class="label">Governance Level</span>
+                <p><strong>Human-in-the-Loop:</strong> MANDATORY.</p>
+                <p><strong>Prohibited Zones:</strong> DO NOT generate fake testimonials or false health claims.</p>
+            </div>
+
+            <div class="prompt-block">
+                <span class="prompt-label">VISUAL_STYLIST (Midjourney)</span>
+                <p class="prompt-text">
+                    /imagine prompt: A ceramic coffee cup with steam rising in the shape of a neural network, <strong>cinematic lighting, macro photography, minimal, earthy tones</strong> --ar 4:5 --no distortion
+                </p>
+            </div>
+
+            <div class="prompt-block">
+                <span class="prompt-label">COPYWRITER_SYSTEM (Claude/GPT)</span>
+                <p class="prompt-text">
+                    "You are The Scientific Naturalist. Values: Transparency, Taste. Style: Educated, Calm. Never use: 'Magic', 'Trippy'."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Brewy Brand Book // Confidential</p>
+        <p>Generated by Company Builder Skill</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">&uarr;</button>
+
+    <script>
+        // Back to Top Logic
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Simple Copy-to-Clipboard for Swatches
+        document.querySelectorAll('.swatch-hex').forEach(hex => {
+            hex.style.cursor = 'pointer';
+            hex.title = 'Click to copy';
+            hex.addEventListener('click', () => {
+                navigator.clipboard.writeText(hex.innerText);
+                const originalText = hex.innerText;
+                hex.innerText = 'Copied!';
+                setTimeout(() => hex.innerText = originalText, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
