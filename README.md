@@ -85,10 +85,10 @@ brewy test/
 - [Email Sequences](marketing/email/email_sequences.md)
 - [Website Copy](marketing/website/website_copy.md)
 
-### 🎬 Presentations (open in browser)
-- [Brand Book Deck](presentations/brand_book.html)
-- [Content & Marketing Deck](presentations/content_presentation.html)
-- [Audit Findings](presentations/audit_mismatch_presentation.html)
+### Presentations (Open in Browser)
+*   **Brand Book**: [presentations/brand_book.html](presentations/brand_book.html)
+*   **Content & Marketing Deck**: [presentations/content_presentation.html](presentations/content_presentation.html)
+*   **Audit Mismatch Findings**: [presentations/audit_mismatch_presentation.html](presentations/audit_mismatch_presentation.html)
 
 ## Key Details
 | Detail | Value |
