@@ -72,6 +72,7 @@ brewy test/
 ### 🎨 Brand Strategy
 - [Brand Book](branding/brand_book.md)
 - [Marketing Plan](marketing/comprehensive_marketing_plan.md)
+- [Paid Media Strategy](marketing/paid_media_strategy.md)
 
 ### 📱 Social Media (Detailed Calendars)
 - [Master Content Calendar (12 Weeks)](marketing/content/content_calendar_12weeks.md)
